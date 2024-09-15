@@ -44,3 +44,20 @@ function checkLowStock(inventory) {
 checkLowStock(inventory);
 
 
+function calculateInventoryValue(inventory) {
+    let assets = 0;
+
+    inventory.forEach(product => {
+
+        assets += product.quantity * product.price;  //iterates over the inventory array and returns the total value of all products in stock. 
+
+    })
+
+    return assets;
+}
+
+let result = calculateInventoryValue(inventory)
+
+console.log('The Inventory Value is', result);
+
+
