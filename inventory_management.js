@@ -16,3 +16,14 @@ function displayProductDetails(product){
 }
 
 displayProductDetails(inventory);
+
+function updateStock(product, sold) {
+
+    product.quantity -= sold;   //function to upddate product stock after sales
+
+    if(product.quantity <= product.lowStockLevel){
+        console.log('Out of Stock');
+    }
+
+} 
+
