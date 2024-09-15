@@ -5,3 +5,14 @@ const inventory = [
     { name: 'Headphones', price: 100, quantity: 15, lowStockLevel: 5 },  
     { name: 'Smartwatch', price: 250, quantity: 3, lowStockLevel: 1 }
 ]
+
+function displayProductDetails(product){ 
+    let pro = product[1]; //function to check for a product
+
+    console.log('Product Name: ' + pro.name +', ', 'Price : ' + pro.price + ', ', 'Quantity: '+pro.quantity);
+
+     pro.lowStockLevel >= pro.quantity ? console.log('In Stock') : console.log('Low Stock') ;
+
+}
+
+displayProductDetails(inventory);
