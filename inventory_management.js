@@ -27,3 +27,20 @@ function updateStock(product, sold) {
 
 } 
 
+//additional tests to check the function
+//updateStock(inventory[0], 40);
+// updateStock(inventory[2], 10);
+// updateStock(inventory[4], 5);
+// updateStock(inventory[3], 11);
+
+function checkLowStock(inventory) {
+    inventory.forEach(product => {   //iterates over the inventory array and logs the names of all products that have a quantity below their lowStockLevel.
+        if (product.quantity <= product.lowStockLevel) {
+            console.log(product.name, 'is low in stock');
+        }
+    });
+}
+
+checkLowStock(inventory);
+
+
