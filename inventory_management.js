@@ -60,4 +60,29 @@ let result = calculateInventoryValue(inventory)
 
 console.log('The Inventory Value is', result);
 
+function processSale(productName, soldItem){
+    let product = inventory.find(item => item.name === productName);  //accepts a product name and the number of units sold
+
+    if(product){
+        if(product.quantity >= product.lowStockLevel){
+            updateStock(product, soldItem);
+        }else{
+            console.log('You dont have enough', product.name);
+        }
+    }else{
+        console.log('The product not found!');
+    }
+};
+
+processSale('Laptop', 10); //finding the products in the array by name
+updateStock(inventory[0], 10);// calling updateStock to reduce the quantity
+
+processSale('Laptop DEL', 5); //error message if product not found
+
+processSale('Laptop', 8); //prompts that the inventory is low after the first processing of Laptop sale
+
+console.log(inventory);
+
+
+
 
